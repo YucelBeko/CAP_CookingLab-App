@@ -7,6 +7,11 @@ import streamlit as st
 from ui.layout import centered_local_img, get_img_as_base64
 from ui.navigation import set_page
 
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[1]
+LOGO_DIR = ROOT_DIR / "assets" / "logos"
+
 def show_home_page():
     # Sidebar'ı gizle
     st.markdown("""<style>[data-testid="stSidebar"] {display: none;}</style>""", unsafe_allow_html=True)
