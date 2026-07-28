@@ -277,5 +277,131 @@ def show_home_page():
                     on_click=set_page,
                     args=(card["page"],)
                 )
-
+        
         st.write("")
+
+    # -----------------------------------------------------
+    # DIŞ UYGULAMALAR VE COPILOT AGENTLARI
+    # -----------------------------------------------------
+
+    st.markdown(
+        """
+        <br>
+        <hr style="
+            border:none;
+            border-top:1px solid #dfe3e8;
+            margin:20px 0 30px 0;
+        ">
+
+        <h2 style="
+            text-align:center;
+            color:#2C3E50;
+            margin-bottom:5px;
+        ">
+            Dijital Araçlar ve Asistanlar
+        </h2>
+
+        <p style="
+            text-align:center;
+            color:#7F8C8D;
+            margin-top:0;
+            margin-bottom:30px;
+        ">
+            Power Apps uygulamaları ve Copilot agentları
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    external_tools = [
+        {
+            "label": "Kalibrasyon Takip",
+            "subtitle": "Power Apps",
+            "logo": "PowerApps_Calibration.png",
+            "emoji": "🛠️",
+            "url": "https://apps.powerapps.com/play/e/default-ef5926db-9bdf-4f9f-9066-d8e7f03943f7/a/f4f6dad4-caf4-4f84-9419-2193a267869d?tenantId=ef5926db-9bdf-4f9f-9066-d8e7f03943f7&hint=e5ece18f-278c-4745-904f-ad9dbefd94b7&sourcetime=1785228255221"
+        },
+        {
+            "label": "Envanter ve Ürün Talep",
+            "subtitle": "Power Apps",
+            "logo": "PowerApps_Inventory.png",
+            "emoji": "📦",
+            "url": "https://apps.powerapps.com/play/e/default-ef5926db-9bdf-4f9f-9066-d8e7f03943f7/a/20add716-a782-4c27-b18e-18bb7f794cce?tenantId=ef5926db-9bdf-4f9f-9066-d8e7f03943f7&hint=f7d78743-0444-4ce3-8a6e-fe90fc0f435c&sourcetime=1785228235894"
+        },
+        {
+            "label": "Copilot Agent - Graph Maker",
+            "subtitle": "Microsoft Copilot",
+            "logo": "Copilot_Agent_1.png",
+            "emoji": "🤖",
+            "url": "https://m365.cloud.microsoft/chat/?titleId=T_a26a09db-30e3-4bdd-06a1-133629fc5539&source=embedded-builder"
+        },
+        {
+            "label": "Copilot Agent - Text Editor",
+            "subtitle": "Microsoft Copilot",
+            "logo": "Copilot_Agent_2.png",
+            "emoji": "✨",
+            "url": "https://m365.cloud.microsoft/chat/?titleId=T_ffd29b6d-b73f-2976-a4c7-c2333f1c9d25&source=embedded-builder"
+        }
+    ]
+
+    tool_columns = st.columns(4, gap="medium")
+
+    for column, tool in zip(tool_columns, external_tools):
+        with column:
+            tool_logo_path = LOGO_DIR / tool["logo"]
+
+            if tool_logo_path.exists():
+                centered_local_img(
+                    str(tool_logo_path),
+                    width=150,
+                    height=100
+                )
+            else:
+                st.markdown(
+                    f"""
+                    <div style="
+                        height:100px;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:46px;
+                    ">
+                        {tool["emoji"]}
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
+
+            st.markdown(
+                f"""
+                <div style="
+                    text-align:center;
+                    min-height:52px;
+                    margin-bottom:8px;
+                ">
+                    <div style="
+                        font-size:16px;
+                        font-weight:600;
+                        color:#2C3E50;
+                    ">
+                        {tool["label"]}
+                    </div>
+
+                    <div style="
+                        font-size:12px;
+                        color:#7F8C8D;
+                        margin-top:3px;
+                    ">
+                        {tool["subtitle"]}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            st.link_button(
+                "Uygulamayı Aç",
+                tool["url"],
+                use_container_width=True,
+                type="secondary"
+            )
