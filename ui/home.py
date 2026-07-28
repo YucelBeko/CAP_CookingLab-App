@@ -374,28 +374,15 @@ def show_home_page():
 
             st.markdown(
                 f"""
-                <div style="
-                    text-align:center;
-                    min-height:52px;
-                    margin-bottom:8px;
-                ">
-                    <div style="
-                        font-size:16px;
-                        font-weight:600;
-                        color:#2C3E50;
-                    ">
-                        {tool["label"]}
-                    </div>
-
-                    <div style="
-                        font-size:12px;
-                        color:#7F8C8D;
-                        margin-top:3px;
-                    ">
-                        {tool["subtitle"]}
-                    </div>
+            <div style="text-align:center; min-height:52px; margin-bottom:8px;">
+                <div style="font-size:16px; font-weight:600; color:#2C3E50;">
+                    {tool["label"]}
                 </div>
-                """,
+                <div style="font-size:12px; color:#7F8C8D; margin-top:3px;">
+                    {tool["subtitle"]}
+                </div>
+            </div>
+            """,
                 unsafe_allow_html=True
             )
 
