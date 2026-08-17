@@ -221,7 +221,7 @@ def show_home_page():
         {
             "page": "Tost Ekmeği",
             "label": "Tost Ekmeği",
-            "logo": "ToastBread_Logo.png",
+            "logo": "Bread_Logo.png",
             "emoji": "🍞"
         },
     ]
