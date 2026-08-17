@@ -21,7 +21,7 @@ from sections import (  # noqa: E402
     run_pyrocam,
     run_smallcake,
     run_teflon_block,
-    run_toast_bread,
+    run_toast,
 )
 from ui.home import show_home_page  # noqa: E402
 from ui.layout import add_global_watermark  # noqa: E402
@@ -39,7 +39,7 @@ PAGE_HANDLERS = {
     "Teflon Blok": run_teflon_block,
     "Kurabiye": run_cookie,
     "Unlu Disk": run_flour_disk,
-    "Tost Ekmeği": run_toast_bread,
+    "Tost Ekmeği": run_toast,
 }
 
 
