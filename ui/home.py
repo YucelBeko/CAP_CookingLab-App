@@ -217,7 +217,13 @@ def show_home_page():
             "label": "Unlu Disk",
             "logo": "FlourDisk_Logo.png",
             "emoji": "⚪"
-        }
+        },
+        {
+            "page": "Tost Ekmeği",
+            "label": "Tost Ekmeği",
+            "logo": "ToastBread_Logo.png",
+            "emoji": "🍞"
+        },
     ]
 
     # Her satırda en fazla 4 kart
