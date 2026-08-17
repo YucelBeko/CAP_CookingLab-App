@@ -136,7 +136,11 @@ def _build_browning_heatmap(
 
     ry = _calculate_ry(bgr)
 
-    heat = np.zeros_like(bgr)
+    heat = np.full(
+                        (bgr.shape[0], bgr.shape[1], 3),
+                        255,
+                        dtype=np.uint8
+                    )
 
     valid = bread_mask > 0
 
