@@ -159,7 +159,7 @@ def _build_browning_heatmap(
             cv2.COLORMAP_TURBO
         )
 
-        heat[valid] = colored[valid]
+    heat[valid] = colored[valid]
 
     # Arka plan beyaz kalsın
     heat[~valid] = (255, 255, 255)
