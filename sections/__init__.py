@@ -10,6 +10,7 @@ from .data_merger import run_data_merger
 from .teflon_block import run_teflon_block
 from .cookie import run_cookie
 from .flour_disk import run_flour_disk
+from .toast_bread import run_toast_bread
 
 __all__ = [
     "run_potato",
@@ -22,4 +23,5 @@ __all__ = [
     "run_teflon_block",
     "run_cookie",
     "run_flour_disk",
+    "run_toast_bread",
 ]
